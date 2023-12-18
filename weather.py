@@ -41,4 +41,16 @@ print(get_weather("bangkok",api_key))
 #     f.write(response.text)
 
 
+# Post Requests
+# import requests
 
+# url = 'https://www.w3schools.com/python/demopage.php'
+# myobj = {'somekey': 'somevalue'}
+
+# x = requests.post(url, json = myobj)
+
+# print(x.text)
+
+
+## requests.post(url, data={key: value}, json={key: value}, args)
+## requests.post(url, data = myobj, timeout=2.50)

@@ -1,0 +1,7 @@
+docker volume create pgdata
+
+docker run --name postgres -e POSTGRES_PASSWORD=your_password -d -v pgdata:/var/lib/postgresql/data postgres
+
+docker volume inspect pgdata
+
+docker stop postgres && docker rm postgres
