@@ -1,0 +1,47 @@
+the owner to have all the permissions and no permissions for the group and public, you need to set the permission 700 in absolute mode:
+chmod 700 filename
+
+Change permission on all the files in a directory recursively
+chmod -R 755 directory
+
+chmod 777: Everything for everyone
+chmod 777 filename
+
+chmod +x or chmod a+x: Execution for everyone
+chmod +x /path/to/file
+
+chmod 755: Only owner can write, read and execute for everyone
+chmod 755 /path/to/file
+
+chmod 700: Everything for owner only
+chmod 700 /path/to/file
+
+chmod 666: No one executes
+chmod -c 666 /path/to/file
+
+chmod 644: Everyone can read, only owner can write
+chmod 644 /path/to/file
+
+chmod 600: Owner can read and write, nothing else for anyone
+chmod 600 /path/to/file
+
+The next step to complete the command, you either decide to add permissions bits (+), remove permissions (-), or set permission (=). This last one will add or remove permissions as needed to set permission as you requested.
+
+chmod -v u+
+The next section is where you decide the permission MODE to apply(+), remove (-) or match (=). You can specify any combination of rwx.
+
+chmod -v u+rw
+This next example will apply read/write permission to file for the owner. The verbose option will cause chmod to report on the action.
+
+chmod -v u+rw /path/to/file
+This next one will set the group’s write permission on directory and all its content recursively. It will report only on changes.
+
+chmod -cR g+w /path/to/directory
+You can combine multiple operation to be done on permission like this next example. It will make sure owner has read/write/execute, also add write permission for group and remove execution for everyone else:
+
+chmod u=rwx,g+w,o-x /path/to/file
+This last one will use rFile as a reference to set permission on file. When completed, the permission of file will be exactly as they are for rFile
+
+chmod --reference=/path/to/rFile /path/to/file
+There are more options and MODE that can be used with chmod that are not covered or mentioned here. I wanted to keep this to basic and hopefully help a few new Linux user.
+
